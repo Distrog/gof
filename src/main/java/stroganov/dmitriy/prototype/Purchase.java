@@ -26,4 +26,12 @@ public class Purchase {
     public void setCost(BigDecimal cost) {
         this.cost = cost;
     }
+
+    @Override
+    public String toString() {
+        return "Purchase{" +
+                "name='" + name + '\'' +
+                ", cost=" + cost +
+                '}';
+    }
 }

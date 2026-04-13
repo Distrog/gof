@@ -39,11 +39,20 @@ public class Client {
         this.purchases = purchases;
     }
 
-    Client createAndCopy(Client client) {
+    public Client createAndCopy(Client client) {
         List<Purchase> purchaseList = new ArrayList<>();
 
-        client.getPurchases().forEach(p -> purchaseList.add(p));
+        client.getPurchases().forEach(p -> purchaseList.add(new Purchase(p.getName(), p.getCost())));
 
         return new Client(client.getName(), client.getPhone(), purchaseList);
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", purchases=" + purchases +
+                '}';
     }
 }
