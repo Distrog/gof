@@ -1,4 +1,8 @@
 package stroganov.dmitriy.factoryMethod;
 
-public class Spear {
+public class Spear extends Weapon{
+    @Override
+    public void strike() {
+        System.out.println("Удар копьем");
+    }
 }

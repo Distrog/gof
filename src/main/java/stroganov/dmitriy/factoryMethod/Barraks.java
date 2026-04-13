@@ -1,4 +1,6 @@
 package stroganov.dmitriy.factoryMethod;
 
-public class Barraks {
+public abstract class Barraks {
+
+    public abstract Unit create();
 }

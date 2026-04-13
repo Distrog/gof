@@ -1,4 +1,8 @@
 package stroganov.dmitriy.factoryMethod;
 
-public class ElfArcherBarraks {
+public class ElfArcherBarraks extends Barraks{
+    @Override
+    public Unit create() {
+        return new ElfArcher();
+    }
 }

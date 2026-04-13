@@ -1,17 +1,22 @@
 package stroganov.dmitriy;
 
+import stroganov.dmitriy.builder.Warrior;
+import stroganov.dmitriy.factoryMethod.Barraks;
+import stroganov.dmitriy.factoryMethod.ElfArcherBarraks;
+import stroganov.dmitriy.factoryMethod.Unit;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+//        Barraks elfBarraks = new ElfArcherBarraks();
+//        Unit legolas = elfBarraks.create();
+//        legolas.getWeapon().strike();
+//        legolas.getArmor().defend();
+//        legolas.getRace().say();
+
+        Warrior warrior = Warrior.builder().name("Sam").damage(10).build();
+        System.out.println(warrior.toString());
     }
 }

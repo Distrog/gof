@@ -1,4 +1,6 @@
 package stroganov.dmitriy.factoryMethod;
 
-public class Armor {
+public abstract class Armor {
+
+    public abstract void defend();
 }

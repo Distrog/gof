@@ -1,4 +1,6 @@
 package stroganov.dmitriy.factoryMethod;
 
-public class Race {
+public abstract class Race{
+
+    public abstract void say();
 }

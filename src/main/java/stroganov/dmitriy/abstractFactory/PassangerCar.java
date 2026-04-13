@@ -1,4 +1,4 @@
 package stroganov.dmitriy.abstractFactory;
 
-public class PassangerCar {
+public class PassangerCar implements Car{
 }

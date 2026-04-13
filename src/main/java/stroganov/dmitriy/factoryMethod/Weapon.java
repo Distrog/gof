@@ -1,4 +1,6 @@
 package stroganov.dmitriy.factoryMethod;
 
-public class Weapon {
+public abstract class Weapon {
+
+    public abstract void strike();
 }

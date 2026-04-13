@@ -1,24 +1,10 @@
 package stroganov.dmitriy.factoryMethod;
 
-public class Elf extends Unit{
+public class ElfArcher extends Unit{
 
-    public Elf(){
+    public ElfArcher(){
         weapon = new Bow();
         armor = new LeatherArmor();
-    }
-
-    @Override
-    void strike() {
-
-    }
-
-    @Override
-    void defend() {
-
-    }
-
-    @Override
-    void say() {
-
+        race = new Elf();
     }
 }
