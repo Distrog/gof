@@ -1,29 +1,21 @@
 package stroganov.dmitriy;
 
-import stroganov.dmitriy.adapter.Horse;
-import stroganov.dmitriy.adapter.HorseAdapter;
-import stroganov.dmitriy.bridge.*;
-import stroganov.dmitriy.builder.Warrior;
-import stroganov.dmitriy.composite.Relative;
-import stroganov.dmitriy.composite.RelativeWithChildren;
-import stroganov.dmitriy.decorator.Cheese;
-import stroganov.dmitriy.decorator.Meat;
-import stroganov.dmitriy.decorator.Pizza;
-import stroganov.dmitriy.decorator.Tomato;
-import stroganov.dmitriy.facade.Pizzaria;
-import stroganov.dmitriy.factoryMethod.Barraks;
-import stroganov.dmitriy.factoryMethod.ElfArcherBarraks;
-import stroganov.dmitriy.factoryMethod.Unit;
-import stroganov.dmitriy.prototype.Client;
-import stroganov.dmitriy.prototype.Purchase;
-import stroganov.dmitriy.proxy.Programmer;
-import stroganov.dmitriy.proxy.Senior;
-import stroganov.dmitriy.proxy.Trainee;
-import stroganov.dmitriy.singletone.Hero;
+import stroganov.dmitriy.behavioral.iterator.*;
+import stroganov.dmitriy.behavioral.mediator.Husband;
+import stroganov.dmitriy.behavioral.mediator.Layer;
+import stroganov.dmitriy.behavioral.mediator.Mediator;
+import stroganov.dmitriy.behavioral.mediator.Wife;
+import stroganov.dmitriy.behavioral.memento.PhonoAlbum;
+import stroganov.dmitriy.behavioral.memento.Turist;
+import stroganov.dmitriy.behavioral.observer.Blogger;
+import stroganov.dmitriy.behavioral.observer.Subscriber;
+import stroganov.dmitriy.behavioral.state.Employee;
+import stroganov.dmitriy.behavioral.strategy.*;
+import stroganov.dmitriy.behavioral.templateMethod.Grunt;
+import stroganov.dmitriy.behavioral.templateMethod.Unit;
+import stroganov.dmitriy.behavioral.visitor.*;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -83,7 +75,104 @@ public class Main {
 //        Pizzaria pizzaria = new Pizzaria();
 //        pizzaria.cook();
 
-        Programmer programmer = new Trainee();
-        programmer.work();
+//        Programmer programmer = new Trainee();
+//        programmer.work();
+
+//        Person person = new Person("Дмитрий", "Стfроганов", "Алексеевич");
+//
+//        Handler first = new NameHandler();
+//        Handler second = new SurnameHandler();
+//        Handler third = new PatronymicHandler();
+//        second.setNext(third);
+//        first.setNext(second);
+//
+//        try {
+//            first.handle(person);
+//        } catch (RuntimeException e){
+//            System.out.println(e.getMessage());
+//        }
+
+//        RemoteController remoteController = new RemoteController();
+//        remoteController.pushButton(CommandName.ON);
+//        remoteController.pushButton(CommandName.OFF);
+//        remoteController.pushButton(CommandName.NEXT_CHANNEL);
+//        remoteController.pushButton(CommandName.NEXT_CHANNEL);
+//        remoteController.pushButton(CommandName.PREVIOUS_CHANNEL);
+
+//        try {
+//            Shelter catShelter = new CatShelter(List.of(new Cat(), new Cat()));
+//            AnimalIterator catShelterIterator = catShelter.createIterator();
+//            catShelterIterator.next();
+//            catShelterIterator.next();
+////            catShelterIterator.next();
+//
+//            Shelter dogShelter = new DogShelter(List.of(new Dog(), new Dog(), new Dog()));
+//            AnimalIterator dogShelterIterator = dogShelter.createIterator();
+//            dogShelterIterator.next();
+//            dogShelterIterator.next();
+//            if(dogShelterIterator.hasNext()){
+//                dogShelterIterator.next();
+//            }
+//            if(dogShelterIterator.hasNext()){
+//                dogShelterIterator.next();
+//            }
+//        } catch (RuntimeException e) {
+//            System.out.println(e.getMessage());
+//        }
+
+//        Mediator layer = new Layer();
+//        Wife wife = new Wife(layer);
+//        Husband husband = new Husband(layer);
+//
+//        husband.send("12345447745");
+//        wife.send("asdfg;sdgfhn");
+
+//        Turist turist = new Turist("горы", LocalDate.of(2026, 04, 10));
+//        PhonoAlbum photoAlbum = new PhonoAlbum();
+//        photoAlbum.getPhotos().push(turist.takePhoto());
+//        turist.setPlace("река");
+//        turist.setDate(LocalDate.of(2026, 04, 11));
+//        photoAlbum.getPhotos().push(turist.takePhoto());
+//        System.out.println(photoAlbum);
+//        photoAlbum.getPhotos().pop();
+//        System.out.println(turist);
+//        turist.returnToLastLocation(photoAlbum.getPhotos().peek());
+//        System.out.println(turist);
+
+//        Subscriber subscriber1 = new Subscriber();
+//        Subscriber subscriber2 = new Subscriber();
+//
+//        Blogger blogger = new Blogger();
+//        blogger.subscribe(subscriber1);
+//        blogger.subscribe(subscriber2);
+//
+//        blogger.notifySubscribers();
+
+//        Employee employee = new Employee();
+//
+//        employee.request();
+//        employee.request();
+//        employee.request();
+//        employee.request();
+
+//        AllTerrainVehicle car = new AllTerrainVehicle(new Drive());
+//        AllTerrainVehicle airplane = new AllTerrainVehicle(new Fly());
+//        AllTerrainVehicle boat = new AllTerrainVehicle(new Swim());
+//
+//        car.move();
+//        airplane.move();
+//        boat.move();
+
+//        Unit grunt = new Grunt();
+//        grunt.shout();
+//        grunt.attack();
+//        grunt.die();
+
+        VisitPlan visitPlan = new VisitPlan();
+        visitPlan.add(new Home());
+        visitPlan.add(new Work());
+        visitPlan.add(new Bar());
+        visitPlan.accept(new PlaceVisitorImpl());
+
     }
 }
